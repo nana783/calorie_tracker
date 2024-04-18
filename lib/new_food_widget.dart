@@ -7,7 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:calorie_tracker/food.dart';
 import 'main.dart';
 
-// Клас, що дозволяє користувачеві додавати нові записи про їжу
+/// Клас, що дозволяє користувачеві додавати нові записи про їжу
 class NewFoodWidget extends StatefulWidget {
   const NewFoodWidget({Key? key}) : super(key: key);
 
@@ -16,20 +16,21 @@ class NewFoodWidget extends StatefulWidget {
 }
 
 class NewFoodState extends State<NewFoodWidget> {
-  // Зображення за замовчуванням для нової страви
+  /// Зображення за замовчуванням для нової страви
   static ImageProvider image = const AssetImage("assets/burger.png");
-  // Файл зображення для вибраної страви
+  /// Файл зображення для вибраної страви
   static late File imageFile;
+  /// Контекст побудови віджету
   static late BuildContext buildContext;
-  // Прапорець, що показує, чи ініціалізоване зображення
+  /// Прапорець, що показує, чи ініціалізоване зображення
   static bool imageInited = false;
-  // Контролери для введення даних про нову страву
+  /// Контролери для введення даних про нову страву
   static TextEditingController proteinController = TextEditingController(),
       carbController = TextEditingController(),
       fatController = TextEditingController(),
       nameController = TextEditingController(),
       calorieController = TextEditingController();
-  // Метод для отримання текстового поля вводу
+  /// Метод для отримання текстового поля вводу
   Widget getInputField(String label, TextEditingController controller,
       {bool isnumber = true}) {
     return TextField(
@@ -103,7 +104,7 @@ class NewFoodState extends State<NewFoodWidget> {
     );
   }
 
-  // Метод, що викликається при натисканні кнопки для додавання страви
+  /// Метод, що викликається при натисканні кнопки для додавання страви
   void addFoodPressed() async {
     final manager = ScaffoldMessenger.of(buildContext);
     // Показати сповіщення користувачеві, якщо не всі поля заповнені
@@ -152,9 +153,11 @@ class NewFoodState extends State<NewFoodWidget> {
     manager.showSnackBar(const SnackBar(content: Text("Food added")));
   }
 
-  // Метод, що викликається при натисканні кнопки для додавання зображення страви
+  /// Метод, що викликається при натисканні кнопки для додавання зображення страви
   void addImagePressed() async {
     final ImagePicker picker = ImagePicker();
+    // Використовуємо picker, щоб отримати фото з камери.
+    // pickImage() повертає XFile?, який може бути null, якщо користувач не вибрав або не зробив фотографію.
     final XFile? photo = await picker.pickImage(source: ImageSource.camera);
     setState(() {
       if (photo != null) {

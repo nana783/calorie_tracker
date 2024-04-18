@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:calorie_tracker/main.dart';
 import 'dart:convert';
 
-// Клас представляє страву з іменем, зображенням, макронутрієнтами та порціями.
+/// Клас представляє страву з іменем, зображенням, макронутрієнтами та порціями
 class Food {
   String name, imagefile;
   MacroNutrients macros;
@@ -19,7 +19,7 @@ class Food {
 
   void onDeleteButtonPressed() {}
 
-  // Конструктор з JSON об'єкта
+  /// Конструктор з JSON об'єкта
   Food.fromJson(Map<String, dynamic> jsonObject)
       : name = "",
         imagefile = "",
@@ -34,11 +34,11 @@ class Food {
     List<FoodPortion>.from(l.map((model) => FoodPortion.fromJson(model)));
   }
 
-  // Перетворення в JSON об'єкт.
+  /// Перетворення в JSON об'єкт.
   Map<String, dynamic> toJson() =>
       {'n': name, 'i': imagefile, 'm': macros, 'portions': portions};
 
-  // Метод для відображення віджета страви.
+  /// Метод для відображення віджета страви.
   Future<Widget> getFoodWidget(Function ondelete) async {
     return Padding(
         padding: const EdgeInsets.all(7),
@@ -103,7 +103,7 @@ class Food {
   }
 }
 
-// Клас FoodPortion представляє порцію страви з назвою та вагою в грамах
+/// Клас FoodPortion представляє порцію страви з назвою та вагою в грамах
 class FoodPortion {
   String name;
   int grams;
@@ -116,7 +116,7 @@ class FoodPortion {
   Map<String, dynamic> toJson() => {'n': name, 'g': grams};
 }
 
-// Клас представляє макронутрієнти в страві
+/// Клас представляє макронутрієнти в страві
 class MacroNutrients {
   double protein, carbohidrates, fat, calories;
   MacroNutrients.fromJson(Map<String, dynamic> json)

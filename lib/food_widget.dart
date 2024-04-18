@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 
+/// Віджет для відображення списку їжі
 class FoodWidget extends StatefulWidget {
   const FoodWidget({Key? key}) : super(key: key);
 
@@ -8,9 +9,12 @@ class FoodWidget extends StatefulWidget {
   State<FoodWidget> createState() => FoodWidgetState();
 }
 
+/// Стан для FoodWidget
 class FoodWidgetState extends State<FoodWidget> {
+  /// Список віджетів, що представляють їжу
   static List<Widget> FoodWidgets = [];
 
+  /// Побудова списку віджетів їжі
   void buildFoods() {
     setState(() {
       FoodWidgets.clear();

@@ -6,7 +6,7 @@ import 'package:calorie_tracker/food_log.dart';
 import 'main.dart';
 import 'dart:convert';
 
-// Клас, що дозволяє користувачеві додавати записи їжі в журнал.
+/// Клас, що дозволяє користувачеві додавати записи їжі в журнал
 class AddLogWidget extends StatefulWidget {
   Function closeCallback;
   AddLogWidget({required this.closeCallback, Key? key}) : super(key: key);
@@ -15,16 +15,20 @@ class AddLogWidget extends StatefulWidget {
   State<AddLogWidget> createState() => AddLogWidgetState();
 }
 
+/// Стан для AddLogWidget
 class AddLogWidgetState extends State<AddLogWidget> {
   String? selectedValue;
   late Food selectedFood;
+  /// Білки
   int protein = 0;
+  /// Вуглеводи
   int carbs = 0;
+  /// Жири
   int fat = 0;
   TextEditingController caloriesController = TextEditingController(),
       gramsController = TextEditingController();
 
-  // Метод для обчислення макронутрієнтів на основі грамів
+  /// Метод для обчислення макронутрієнтів на основі ваги
   void calcMacros() {
     double? grams = double.tryParse(gramsController.text);
     if (grams == null) {
@@ -180,7 +184,7 @@ class AddLogWidgetState extends State<AddLogWidget> {
   }
 }
 
-// Функція для першої великої літери слова
+/// Метод для переведення у верхній регістр першої літери слова
 String capitalize(String input) {
   if (input.isEmpty) {
     return input;

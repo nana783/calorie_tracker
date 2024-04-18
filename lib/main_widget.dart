@@ -16,11 +16,11 @@ class MainWidgetState extends State<MainWidget> {
   /// Індекс вибраного екрану у нижній панелі навігації
   static int bottomBarSelectedIndex = 0;
 
-  /// Список віджетів для кожного екрану у нижній панелі навігації.
+  /// Список віджетів для кожного екрану у нижній панелі навігації
   static const List<StatefulWidget> widgets = <StatefulWidget>[
-    FoodWidget(),
-    TodayWidget(),
-    NewFoodWidget()
+    FoodWidget(), // Віджет для відображення списку їжі
+    TodayWidget(), // Віджет для відображення інформації про день
+    NewFoodWidget() // Віджет для додавання нової їжі
   ];
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class MainWidgetState extends State<MainWidget> {
       body: widgets[bottomBarSelectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         // Змінює вибраний екран у нижній панелі навігації
-      onTap: (int value) => setState(() {
+        onTap: (int value) => setState(() {
           bottomBarSelectedIndex = value;
         }),
         currentIndex: bottomBarSelectedIndex,

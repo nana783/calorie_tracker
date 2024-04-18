@@ -5,7 +5,7 @@ import 'package:calorie_tracker/food_log.dart';
 import 'main.dart';
 import 'dart:convert';
 
-// Клас, який відображає інформацію про їжу та дозволяє користувачеві додавати записи про прийом їжі.
+/// Клас, який відображає інформацію про їжу та дозволяє користувачеві додавати записи про прийом їжі.
 class TodayWidget extends StatefulWidget {
   const TodayWidget({Key? key}) : super(key: key);
 
@@ -13,14 +13,15 @@ class TodayWidget extends StatefulWidget {
   State<TodayWidget> createState() => TodayWidgetState();
 }
 
+/// Клас стану для TodayWidget
 class TodayWidgetState extends State<TodayWidget> {
-  // Контролер для введення цілей калорій на день
+  /// Контролер для введення цілей калорій на день
   TextEditingController calorieGoalController = TextEditingController();
   late Widget selectedWidget;
-  // Прапорець, що показує, чи відображається меню додавання нової страви
+  /// Прапорець, що показує, чи відображається меню додавання нової страви
   bool inAddMenu = false;
 
-  // Метод для отримання віджета при відсутності доданої інформації про страви
+  /// Метод для отримання віджета при відсутності доданої інформації про страви
   Widget getOffDayWidget() {
     return Center(
       child: Column(
@@ -59,7 +60,7 @@ class TodayWidgetState extends State<TodayWidget> {
     );
   }
 
-  // Метод для отримання віджета з відображенням інформації про прийом їжі під час активного дня
+  /// Метод для отримання віджета з відображенням інформації про прийом їжі під час активного дня
   Widget getOnDayWidget() {
     String? foodsJson = preferenceInstance.getString("todaylog");
     // Стек віджетів, що містить список записів про прийом їжі, кнопки для додавання нової страви
