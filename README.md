@@ -10,7 +10,7 @@ Calorie Tracker is an application for tracking consumed calories and macronutrie
 4. **Flexible Settings:** You can specify your goals for daily calorie and macronutrient intake, and the app will display how close you are to achieving your goals.
 
 ## Installation:
-1. Clone the repository to your computer: `git clone https://github.com/yourusername/calorie_tracker.git`
+1. Clone the repository to your computer: `git clone https://github.com/nana783/calorie_tracker.git`
 2. Open the project folder in your preferred development environment.
 3. Run the project using the Flutter framework: `flutter run`
 
@@ -18,4 +18,3 @@ Calorie Tracker is an application for tracking consumed calories and macronutrie
 - **Flutter:** Used for developing cross-platform applications for iOS and Android.
 - **Dart:** Programming language used for developing Flutter apps.
 - **JSON:** Data interchange format used for communication between server and client.
-
